@@ -5,7 +5,11 @@
 </template>
 
 <script>
+import { getVueRouter } from '@/api/router'
 export default {
-  name: 'App'
+  name: 'App',
+  mounted() {
+    getVueRouter()
+  }
 }
 </script>

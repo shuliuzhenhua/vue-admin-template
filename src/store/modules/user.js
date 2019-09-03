@@ -29,7 +29,10 @@ const actions = {
         const { data } = response
         commit('SET_TOKEN', data.token)
         setToken(data.token)
-        resolve()
+        const rou = resetRouter()
+        this.dispatch('vueRouter/getRouter', rou).then(() => {
+          resolve()
+        })
       }).catch(error => {
         reject(error)
       })
@@ -64,6 +67,7 @@ const actions = {
         commit('SET_TOKEN', '')
         removeToken()
         resetRouter()
+        localStorage.removeItem('VUE_ROUTERS')
         resolve()
       }).catch(error => {
         reject(error)

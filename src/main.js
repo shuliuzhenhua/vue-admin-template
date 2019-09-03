@@ -12,6 +12,8 @@ import App from './App'
 import store from './store'
 import router from './router'
 
+// store.dispatch('vueRouter/getRouter')
+
 import '@/icons' // icon
 import '@/permission' // permission control
 
