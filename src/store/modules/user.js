@@ -29,8 +29,7 @@ const actions = {
         const { data } = response
         commit('SET_TOKEN', data.token)
         setToken(data.token)
-        const rou = resetRouter()
-        this.dispatch('vueRouter/getRouter', rou).then(() => {
+        this.dispatch('vueRouter/getRouter').then(() => {
           resolve()
         })
       }).catch(error => {
